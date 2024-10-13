@@ -10,7 +10,7 @@ public class DBConnectMySQL {
 	private static String DRIVER = "com.mysql.cj.jdbc.Driver";
 	private static String URL = "jdbc:mysql://localhost:3306/ltweb";
 
-	public static Connection getDatabaseConnection() throws SQLException, Exception{
+	public static Connection getConnection() throws SQLException, Exception{
 		try {
 			Class.forName(DRIVER);
 			return DriverManager.getConnection(URL, USERNAME, PASSWORD);
@@ -26,7 +26,7 @@ public class DBConnectMySQL {
 		try
 		{
 			new DBConnectMySQL();
-			System.out.println(DBConnectMySQL.getDatabaseConnection());
+			System.out.println(DBConnectMySQL.getConnection());
 		}
 		catch(Exception e)
 		{
